@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "E:/from_github/CreditCardValidator/cmake-build-debug",
-		"source" : "E:/from_github/CreditCardValidator"
+		"build" : "E:/from_github/CreditCardValidator/CreditCardValidator/cmake-build-debug",
+		"source" : "E:/from_github/CreditCardValidator/CreditCardValidator"
 	},
 	"version" : 
 	{

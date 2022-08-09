@@ -1,4 +1,4 @@
-# Install script for directory: E:/from_github/CreditCardValidator
+# Install script for directory: E:/from_github/CreditCardValidator/CreditCardValidator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "E:/from_github/CreditCardValidator/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "E:/from_github/CreditCardValidator/CreditCardValidator/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
