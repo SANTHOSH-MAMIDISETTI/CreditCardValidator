@@ -1,14 +1,46 @@
-using namespace std;
 #include <iostream>
-#include<bits/stdc++.h>
-#include <cstring>
 #include <algorithm>
+using namespace std;
 
-bool checkType (string CardNumber)
+int Validator(const string& CardNumber)
+{   string reversed; int sum = 0, sum2 = 0;
+    reversed = CardNumber;
+    reverse(reversed.begin(),reversed.end());
+
+//    FOR ODD
+    for (int i = 0 ;i < reversed.length(); i= i+2)
+    {
+        int tmp = ((reversed[i] - 48));
+        sum = sum + tmp;
+    }
+
+// FOR EVEN
+    for ( int j = CardNumber.length()-2; j>=0; j=j-2)
+    {
+        int tmp2 = ((CardNumber[j] - 48) * 2);
+        if (tmp2 > 9)
+        {
+            tmp2 = (tmp2 / 10) + (tmp2 % 10);
+        }
+        sum2 += tmp2;
+    }
+    int grand_sum = sum + sum2;
+    if(grand_sum%10 == 0)
+    {
+        cout<<"VALID CREDIT CARD NUMBER :) "<<endl;
+    }
+    else
+    {
+        cout<<"INVALID CREDIT CARD NUMBER :( "<<endl;
+    }
+    return 0;
+}
+
+bool checkType (const string& CardNumber)
 {
     if (CardNumber.length() != 16 )
     {
-        cout << " wrong digits\n";
+        cout << "PLEASE ENTER THE 16 DIGITS ";
     }
     else
     {
@@ -18,25 +50,27 @@ bool checkType (string CardNumber)
                 continue;
             else
             {
-                cout << "enter proper number\n";
+                cout << "CHARACTERS NOT SUPPORTED ";
                 break;
             }
-        };
+        }
+        Validator(CardNumber);
     }
-};
-int Validator(const string& CardNumber)
-{   string reversed;
-    reversed = CardNumber;
-    reverse(reversed.begin(),reversed.end());
-    cout<<reversed<<endl;
-    cout<<CardNumber;
-    return 0;
-};
+    return false;
+}
+
+
 int main()
 {
     string CardNumber;
-    cout << "Enter the number " << endl;
+    cout << "Enter the number to validate  " << endl;
     cin>>CardNumber;
-    checkType(CardNumber);
-    Validator(CardNumber);
+    try
+    {
+        checkType(CardNumber);
+    }
+    catch (exception& e)
+    {
+        cout<<e.what()<<endl;
+    }
 }
